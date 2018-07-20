@@ -66,8 +66,7 @@ class FlagGame extends Component {
 
     return (
       <div className="game">
-        {flags.length > 0 ?
-        [
+        {flags.length > 0 ? [
           <Display
             key="display"
             guessed={this.state.guessed}
