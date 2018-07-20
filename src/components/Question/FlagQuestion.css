@@ -1,0 +1,41 @@
+.questionForm {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    height: 75px;
+}
+
+.choice {
+    font-size: 30px;
+    margin: 20px;
+}
+
+input[type="radio"] {
+    width: 25px;
+    height: 25px;
+}
+
+button {
+    width: 140px;
+    background: lightskyblue;
+    border: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover {
+    background: dodgerblue;
+    cursor: pointer;
+}
+
+button:active {
+    background: lightskyblue;
+}
+
+button:disabled {
+    cursor: default;
+    background: lightskyblue;
+}

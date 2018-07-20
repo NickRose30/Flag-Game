@@ -1,0 +1,27 @@
+.answer {
+    font-size: 30px;
+    text-align: center;
+    margin: 20px 0;
+    height: 75px;
+}
+
+.next_question_btn {
+    width: 140px;
+    height: 100%;
+    margin: 0 30px;
+    background: lightskyblue;
+    border: none;
+}
+
+next_question_btn:focus {
+    outline: none;
+}
+
+next_question_btn:hover {
+    background: dodgerblue;
+    cursor: pointer;
+}
+
+next_question_btn:active {
+    background: lightskyblue;
+}
