@@ -9,7 +9,7 @@ class FlagGame extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      flags: [],
+      flags: localStorage.getItem('flags') ? JSON.parse(localStorage.getItem('flags')) : [],
       selected: "",
       guessed: false,
       countries: [],
@@ -23,9 +23,19 @@ class FlagGame extends Component {
   }
 
   componentDidMount() {
-    fetch(apiUrl)
-      .then(response => response.json())
-      .then(response => this.setState({flags: shuffle(response)},() => this.newQuestion()))
+    const { flags } = this.state;
+    if(flags.length === 0) {
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(response => {
+          this.setState({flags: shuffle(response)},() => {
+            localStorage.setItem('flags', JSON.stringify(shuffle(response)));
+            this.newQuestion()
+          });
+        })
+    } else {
+      this.newQuestion();
+    }
   }
 
   newQuestion() {
